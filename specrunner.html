@@ -3,6 +3,7 @@
   <title>JS notes app tests</title>
   <script src="src/note-model.js"></script>
   <script src="src/note-list-model.js"></script>
+  <script src="src/single-note-view.js"></script>
   <script src="src/note-list-view.js"></script>
   <script src="test/assert.js"></script>
   <script src="test/test-runner.js"></script>
@@ -11,10 +12,16 @@
 </head>
 <script>
   $(document).ready(function() {
-    $(".test_log").append("<li>" + testDefaultText() + "</li>");
-    $(".test_log").append("<li>" + testNewNoteOnList() + "</li>");
-    $(".test_log").append("<li>" + testNoteListView() + "</li>");
-    errorLineColor();
+    $(".test_log").append("<h1>Note Tests</h1>");
+    try {
+      $(".test_log").append("<li>" + testDefaultText() + "</li>");
+      $(".test_log").append("<li>" + testNewNoteOnList() + "</li>");
+      $(".test_log").append("<li>" + testNoteListView() + "</li>");
+      $(".test_log").append("<li>" + testSingleNoteView() + "</li>");
+    } catch(err) {
+      $(".test_log").append("<li>" + err + ": Test failed</li>");
+    }
+    $(".test_log").append("<h2>" + errorLineColor() + "</h2>");
   });
 </script>
 
