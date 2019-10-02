@@ -1,0 +1,25 @@
+
+
+table {
+  border:1px solid black;
+  border-collapse:collapse;
+  background-color:#ffdab9;
+  margin: auto;
+  box-shadow: 5px 10px;
+}
+
+td {
+  border:1px solid black;
+  border-collapse:collapse;
+  background-color:#ffdab9;
+  margin: auto;
+  box-shadow: 5px 10px;
+  text-align: center;
+}
+
+h1 {
+  color:red;
+  font-size: 30px;
+  text-shadow: 2px 2px #ffdab9;
+  text-align: center;
+} 
