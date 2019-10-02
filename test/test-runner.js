@@ -1,7 +1,10 @@
+// import { noteListView } from "../src/note-list-view";
+
 // contains test instructions
 var test_note = new note('JS rocks');
-var test_note_array =  new noteList()
-test_note_array.createNote("Favorite drink: Beer")
+var test_note_list =  new noteList();
+test_note_list.createNote("Favorite drink: Beer");
+var test_note_list_view = new noteListView(test_note_list);
 
 function testDefaultText() { 
   result = assert.isTrue(test_note.returnText() === 'JS rocks');
@@ -9,6 +12,11 @@ function testDefaultText() {
 };
 
 function testNewNoteOnList() { 
-  result = assert.isTrue(test_note_array.returnList().pop().returnText() === 'Favorite drink: Beer');
+  result = assert.isTrue(test_note_list.returnList()[0].returnText() === 'Favorite drink: Beer');
+  return arguments.callee.name + ': ' + result;
+};
+
+function testNoteListView() { 
+  result = assert.isTrue(test_note_list_view.htmlString === '<tr><td>Favorite drink: Beer</td></tr>');
   return arguments.callee.name + ': ' + result;
 };

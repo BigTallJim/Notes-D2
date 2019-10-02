@@ -1,17 +1,18 @@
-$(document).ready(function() {
-  $("#app").html("Howdy");
-});
+// $(document).ready(function() {
+//   $('#app').empty();
+//   $("#app").html("Howdy");
+// });
 
 (function(exports){
-  var newNoteList = new noteList();
-  newNoteList.createNote("Favourite drink: seltzer.");
-  
-  function createNoteRow(){
-    this.htmlString = "<tr><td>";
-    htmlString += newNoteList.returnList().pop().returnText();
-    htmlString += "</td></tr>";
-    return htmlString;
+
+  function noteController(noteList){
+    noteList.createNote("Favourite drink: seltzer.");
+    noteListView = new noteListView(noteList);
   }
-  exports.createNoteRow = createNoteRow;
+
+  noteController.prototype.setHTML = function() {
+    $("#app").append(noteListView.htmlString);
+  }
+  exports.noteController = noteController;
 })(this);
 

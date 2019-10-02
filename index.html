@@ -8,22 +8,21 @@
 
 <body>
 <h1>Notes App</h1>
-<div id="app">
-  Hello
-</div>
 
 <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
 <script src="src/note-model.js"></script>
 <script src="src/note-list-model.js"></script>
+<script src="src/note-list-view.js"></script>
 <script src="src/note-controller.js"></script>
 
 <script>
   $(document).ready(function() {
-    $("#noteTable").append(createNoteRow());
+    new noteController(new noteList()).setHTML();
   });
 </script>
 
-<table id="noteTable"></table>
+<table id="app">
+</table>
 
 </body>
 </html>
