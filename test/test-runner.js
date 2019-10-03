@@ -19,7 +19,7 @@ function testNewNoteOnList() {
 function testNoteListView() {
   var test_note_controller = new noteController(new noteList());
   test_note_controller.setHTML();
-  result = assert.isTrue($("#app").text() === 'Favourite drink: seltzer.');
+  result = assert.isTrue($("#app").text() === 'Favourite drink: sel');
   return arguments.callee.name + ': ' + result;
 };
 
