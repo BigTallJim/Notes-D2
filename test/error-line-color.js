@@ -2,7 +2,6 @@ function errorLineColor() {
   var passed = 0;
   var failed = 0;
   var lines = $('.test_log').html().split('</li>');  
-  console.log(lines);
   $('.test_log').empty();
 
   $.each(lines, function() {
