@@ -2,14 +2,16 @@
 <html>
 
 <head>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="notes.css">
   <title>Notes</title>
 </head>
 
 <body>
-<h1>Notes App</h1>
 
-<script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="src/note-model.js"></script>
 <script src="src/note-list-model.js"></script>
 <script src="src/note-list-view.js"></script>
@@ -17,12 +19,18 @@
 
 <script>
   $(document).ready(function() {
-    new noteController(new noteList()).setHTML();
+    noteController = new noteController(new noteList()).setHTML();
   });
 </script>
 
-<table id="app">
-</table>
+<div class="jumbotron">
+  <h1>Notes App</h1>
+  <table class="table table-striped" id="app">
+  </tbody>
+  </table>
+
+  <button class="btn btn-danger btn-lg">Does nothing</button>
+</div>
 
 </body>
 </html>
